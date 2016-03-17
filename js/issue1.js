@@ -56,7 +56,7 @@ function getChartingOptions(view) {
 
 	return chartingOptions;
 
-	////functions///////////////////////////////////////////////////////////////////
+	////helper functions///////////////////////////////////////////////////////////////////
 	function cateContains(arr, str) {
 		for (var i = 0; i < arr.length; i++) {
 			if (arr[i] === str || arr[i].name === str)
