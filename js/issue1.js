@@ -19,6 +19,7 @@ function getChartingOptions(view) {
 	var rawCateHeaders = view.object_data.cdata.cvd.YAxisDimensions;
 	var rawCates = view.object_data.cdata.cvd.YAxisList;
 
+    //process rawValues
 	for (var i = 0; i < rawValues.length; i++) {
 		for (var j = 0; j < rawValues[i].length; j++) {
 			if (!(j in chartingOptions.series))
@@ -27,14 +28,18 @@ function getChartingOptions(view) {
 		}
 	}
 
+    //process rawLegendHeaders
 	chartingOptions.legend.title.text = rawLegendHeaders.join(" ");
 
+    //process rawChartTypes
 	setChartTypes(rawChartTypes);
 
+    //process rawLengeds
 	for (var i = 0; i < rawLegends.length; i++) {
 		chartingOptions.series[i].name = rawLegends[i].join("-");
 	}
 
+    //process rawCates
 	var temp;
 	for (var i = 0; i < rawCates.length; i++) {
 		temp = chartingOptions.xAxis.categories;
